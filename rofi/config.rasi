@@ -1,0 +1,174 @@
+/*  ________  ___      ___ _______  _________  ________   ___  ________  ___  __          
+   |\   ____\|\  \    /  /|\  ___ \|\___   ___\\   ___  \|\  \|\   __  \|\  \|\  \        
+   \ \  \___|\ \  \  /  / | \   __/\|___ \  \_\ \  \\ \  \ \  \ \  \|\  \ \  \/  /|_      
+    \ \_____  \ \  \/  / / \ \  \_|/__  \ \  \ \ \  \\ \  \ \  \ \   __  \ \   ___  \     
+     \|____|\  \ \    / /   \ \  \_|\ \  \ \  \ \ \  \\ \  \ \  \ \  \ \  \ \  \\ \  \    
+       ____\_\  \ \__/ /     \ \_______\  \ \__\ \ \__\\ \__\ \__\ \__\ \__\ \__\\ \__\   
+      |\_________\|__|/       \|_______|   \|__|  \|__| \|__|\|__|\|__|\|__|\|__| \|__|   
+      \|_________|    __________________________________________________________CONFIG  */ 
+                                                                                    
+@import "~/.config/rofi/Tokyo_Custom.rasi"
+
+configuration {
+    modi:                 "run,drun";
+    font:				          "SpaceMono Nerd Font 10";
+    show-icons:				    true;
+    icon-theme:				    "candy-icons";
+    display-drun:			    "Apps";
+    drun-display-format:  "{icon} {name}";
+    scroll-method:			  0;
+    disable-history:			false;
+    sidebar-mode:			    false;
+    width:                700px;
+    display-drun:         "   Apps ";
+    display-run:          "   Run ";
+    display-window:       " 﩯 window ";
+    display-Network:      " 󰤨  Network ";
+    display-filebrowser:  " 󰉓  File ";
+    sidebar-mode:         true;
+}
+
+window {
+    background-color:     @background;
+    text-color:           @color2;
+    border:               2;
+    border-color:         @color8;
+    transparency:         "real";
+    border-radius:        8px;
+    padding:              30;
+}
+
+listview {
+    lines:                5;
+    columns:              5;
+    spacing:              4px;
+    cycle:                false;
+    dynamic:              true;
+    layout:               vertical;
+}
+mainbox {
+    border:               0;
+    padding:              0;
+    children:             [ inputbar, listview ];
+    spacing:              40px;
+    padding:              30px;
+}
+message {
+    border:               1px 0px 0px ;
+    border-color:         @color8;
+    padding:              1px ;
+}
+textbox {
+    text-color:           @foreground;
+}
+listview {
+    fixed-height:         0;
+    border:               0px 0px 0px ;
+    border-color:         @separatorcolor;
+    spacing:              8px ;
+    scrollbar:            false;
+    padding:              2px 0px 0px ;
+}
+
+/*-----------------------------------------
+            ELEMENT CONFIGURATION         
+-----------------------------------------*/
+element {
+    orientation:          vertical;
+    border:               0;
+    border-radius:        8px;
+    padding:              10px;
+}
+element-icon {
+  background-color:       inherit;
+  text-color:             inherit;
+  horizontal-align:       0.5;
+  vertical-align:         0.5;
+  size:                   45px;
+}
+element-text {
+    background-color:     inherit;
+    text-color:           inherit;
+    expand:               true;
+    horizontal-align:     0.5;
+    vertical-align:       0.5;
+}
+element.alternate.normal,
+element.normal.normal {
+    background-color: @background;
+    text-color:       @color7;
+}
+element.normal.urgent,
+element.alternate.urgent,
+element.normal.active {
+    background-color: @color3;
+    text-color:       @background;
+}
+element.selected.normal {
+    background-color: @color0;
+    text-color:       @color7;
+}
+element.selected.urgent,
+element.selected.active {
+    background-color: @color0;
+    text-color:       @color7;
+}
+element.alternate.active {
+    background-color: @color2;
+    text-color:       @background;
+}
+
+/*-----------------------------------------
+            ELEMENT CONFIGURATION         
+-----------------------------------------*/
+scrollbar {
+    width:        2px ;
+    border:       0;
+    handle-color: @color2;
+    handle-width: 8px ;
+    padding:      0;
+}
+mode-switcher {
+    border:       1px 0px 0px ;
+    border-color: @color6;
+}
+button {
+    spacing:    0;
+    text-color: @normal-foreground;
+}
+button.selected {
+    background-color: @color6;
+    text-color:       @background;
+}
+inputbar {
+    border-radius:    8px;
+    spacing:    0;
+    text-color: @background;
+    padding:    1px ;
+}
+case-indicator {
+    spacing:    0;
+    text-color: @normal-foreground;
+}
+entry {
+    placeholder: "Search apps";
+    spacing:    0;
+    border-radius: 8px;
+    text-color: @color4;
+    background-color: @color16;
+}
+prompt {
+    spacing:    0;
+    text-color: @color0;
+    background-color: @color16;
+}
+inputbar {
+    children:   [ prompt,textbox-prompt-colon,entry,case-indicator ];
+}
+textbox-prompt-colon {
+    expand:     false;
+    str:        " ";
+    margin:     0px 0em 0em 0em ;
+    text-color: @color8;
+    background-color: @color16;
+}

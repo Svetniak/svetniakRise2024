@@ -1,0 +1,43 @@
+
+alias l='exa --icons'
+alias ll='exa -lhg --icons=always --group-directories-first --sort extension'
+alias la='exa -lhga --icons=always --group-directories-first --sort extension'
+alias lt='exa -Ta ./ --icons -L'
+alias cat='bat'
+
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ..3='cd ../../..'
+alias ..4='cd ../../../..'
+alias clr='clear'
+alias cls='clear'
+alias celar='clear'
+alias caler='clear'
+alias celar='clear'
+alias claer='clear'
+alias clera='clear'
+
+alias update='sudo pacman -Syyu'
+alias pacs='sudo pacman -S'
+alias pacss='pacman -Ss'
+alias pacr='sudo pacman -R'
+alias pacra='sudo pacman -Rns'
+alias yays='yay -Ss'
+alias parus='paru -Ss'
+
+alias zs='source /home/agaho/.zshrc'
+alias p10kc='nvim .p10k.zsh'
+alias p10k='p10k configure'
+alias vim='nvim'
+alias theme='bash -c  "$(wget -qO- https://git.io/vQgMr)" '
+alias auto='~/.config/qtile/autostart.sh'
+alias zoom='~/.repos/zoom/opt/zoom/ZoomLauncher'
+alias restart='sudo reboot'
+
+alias lout='loginctl terminate-user'
+
+alias bscreen='xrandr --output eDP-1 --mode 1920x1080 --pos 2560x360 --output HDMI-1-0 --mode 2560x1440 --pos 0x0 --rotate normal --primary --output DP-1 --mode 2560x1440 --pos 4480x0 --rotate normal'
+alias bscreenr='xrandr --output eDP-1 --mode 1920x1080 --pos 2560x360 --output HDMI-1-0 --mode 2560x1440 --pos 0x0 --rotate normal --primary --output DP-1 --mode 2560x1440 --pos 4480x-1120 --rotate left'
+alias sscreen='xrandr --output eDP-1 --primary --mode 1920x1080 --output HDMI-1-0 --off --output DP-1 --off'
+
+alias chars='cat /usr/share/X11/locale/en_US.UTF-8/Compose'

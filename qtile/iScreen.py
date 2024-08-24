@@ -1,0 +1,141 @@
+def iScreen():
+    return Screen(
+        wallpaper='/home/agaho/Pictures/nebula.jpg',
+        wallpaper_mode='fill',
+        
+        top=bar.Bar(
+            [
+            widget.CurrentLayoutIcon(
+                custom_icon_paths=['home/agaho/.config/qtile/icons'],
+                scale=0.7,
+            ),
+            widget.Prompt(),
+            widget.WindowName(),
+            widget.TextBox(
+                text="",
+                foreground=tokio[10],
+                background=tokio[9],
+                fontsize=24,
+                padding=0,
+            ),
+            widget.TextBox(
+                text = '  ',
+                fontsize = 16,
+                background = tokio[10],
+                foreground = tokio[4],
+                padding_y = -2,
+                mouse_callbacks =
+                    {'Button1': lambda : qtile.cmd_spawn('rofi -show combi')},
+            ),
+            widget.GroupBox(
+                background=tokio[1],
+                highlight_method='text',
+                urgent_alert_method='text',
+                #------------------------------
+                this_current_screen_border=tokio[6],
+                active=tokio[5], #Color for active non viewed screen
+                inactive=tokio[9],
+                this_screen_border=tokio[2],
+                urgent_text=tokio[1],
+                other_current_screen_border=tokio[7],
+                other_screen_border=tokio[8],
+            ),
+            widget.TextBox(
+                text = ' 󰇋 ',
+                fontsize = 16,
+                background = tokio [10],
+                foreground = tokio [4],
+                padding_y = -2,
+                mouse_callbacks =
+                    {'Button1': lambda : qtile.cmd_spawn('rofi -show combi')},
+            ),
+            widget.TextBox(
+                text="",
+                foreground=tokio[10],
+                background=tokio[9],
+                fontsize=24,
+                padding=0,
+            ),
+            widget.Spacer(),
+            widget.TextBox(
+                text="",
+                foreground=tokio[10],
+                background=tokio[9],
+                fontsize=24,
+                padding=0,
+            ),
+            widget.Clock(
+                fontsize = 12,
+                background=tokio[10],
+            ),
+            widget.TextBox(
+                text="",
+                foreground=tokio[10],
+                background=tokio[9],
+                fontsize=24,
+                padding=0,
+            ),
+            widget.TextBox(
+                text=" ",
+                foreground=tokio[1],
+                background=tokio[9],
+                fontsize=16,
+                padding=0,
+                mouse_callbacks =
+                    {'Button1' : lambda : qtile.cmd_spawn('pactl set-sink-volume bluez_output.74_2A_8A_10_6D_FC.1 +5%')},
+            ),
+            widget.TextBox(
+                text=" ",
+                foreground=tokio[2],
+                background=tokio[9],
+                fontsize=16,
+                padding=0,
+                mouse_callbacks =
+                    {'Button1' : lambda : qtile.cmd_spawn('pactl set-sink-volume bluez_output.74_2A_8A_10_6D_FC.1 -5%')},
+            ),
+            widget.TextBox(
+                text="󰂯 ",
+                foreground=tokio[4],
+                background=tokio[9],
+                fontsize=16,
+                padding=0,
+                mouse_callbacks =
+                    {'Button1' : lambda : qtile.cmd_spawn('blueman-manager')},
+            ),
+            widget.TextBox(
+                text="󰈸 ",
+                foreground=tokio[3],
+                background=tokio[9],
+                fontsize=16,
+                padding=0,
+                mouse_callbacks =
+                    {'Button1' : lambda : qtile.cmd_spawn('flameshot gui')},
+                ),
+            widget.Battery(
+                background = tokio [9],
+                foreground = tokio [5],
+                format = '{char}  {percent:1.0%}',
+                low_background= tokio[1],
+                low_foreground= tokio[8],
+                battery = 0,
+                charge_char = '󰂄',
+                discharge_char = '󰁹',
+                empty_char = '󰢜 ',
+                full_char = '󱟢 ',
+                unknown_char = '󱉝 ',
+                fontsize = 14, 
+                update_interval = 10,
+                show_short_text = False,
+                   ),
+            ],
+            24,
+            background = '#0a0d1288',
+            opacity = 0.7,
+            margin=[4, 8, 4, 8],
+            border_width=[2, 2, 2, 2],
+            border_color=[tokio[8]],
+        ),
+        bottom=bar.Gap(8),
+        left=bar.Gap(8),
+        right=bar.Gap(8),
+    ),
